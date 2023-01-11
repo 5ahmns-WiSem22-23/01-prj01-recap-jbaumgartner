@@ -26,15 +26,15 @@ public class Player : MonoBehaviour
 
         spRen.sprite = baseSprite;
     }
-  
 
     void FixedUpdate()
     {
-        //Rotation durch die Horizontale Achse
-        transform.Rotate(0, 0, -Input.GetAxis("Horizontal")*(speed/4));
 
         //Vorwärts und Rückwärts Bewegung durch Vertikale Achse
         rb.velocity = transform.rotation * new Vector2(0, Input.GetAxis("Vertical")) * speed;
+
+        //Rotation durch die Horizontale Achse
+        transform.Rotate(0, 0, -Input.GetAxis("Horizontal")*(speed/4));
     }
 
     //hier wird überprüft ob es kollidiert, wenn Item kollidiert wird altes Collectable zerstört und ein neues gespawnt
