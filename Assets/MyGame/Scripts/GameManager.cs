@@ -6,53 +6,59 @@ public class GameManager : MonoBehaviour
 {
 
     [SerializeField]
-    float minRange;
+    private float minRange;
 
     [SerializeField]
-    float maxRange;
+    private float maxRange;
 
     [SerializeField]
-    GameObject item;
+    private GameObject Collectable;
 
     [SerializeField]
-    Text itemCountDisplay;
+    Text CollectableCountDisplay;
 
     [SerializeField]
     Text timeDisplay;
 
-    public static int itemCount;
+    public static int CollectableCount;
 
-    float time;
+    private float time;
 
     [SerializeField]
-    float maxTime;
+    private float maxTime;
 
-    void Start()
+
+    void Start ()
     {
-        //Spawn bei Start
-         SpawnItem();
+        SpawnCollectable();
     }
 
-    void Update()
+
+    // Collectable Spawnt bei Start
+   
+
+
+    void Update ()
     {
-        // Über die Delta Time kann unabhängig von der FrameRate ein Timer gebaut werden
+        // Timer kann über Delta Time (unabhängig von der FrameRate) erstellt werden
         time += Time.deltaTime;
 
-        // Wenn die Zeit abgelaufen ist, soll das Spiel neu beginnen
+        // Wenn die Zeit abgelaufen ist, soll das Spiel von vorne beginnen
         if(time >= maxTime)
         {
             SceneManager.LoadScene(0);
-            itemCount = 0;
+            CollectableCount = 0;
         }
 
-        // Der Timer und der Score sollen jeden Frame angezeigt werden
+        // Timer und Score werden jeden Frame aktualisiert und angezeigt
         timeDisplay.text = Mathf.Round(maxTime - time).ToString() + " sec. left"; ;
-        itemCountDisplay.text = "Score: " + itemCount.ToString();
+        CollectableCountDisplay.text = "Score: " + CollectableCount.ToString();
     }
 
-    public void SpawnItem()
+    //durch diese Funktion (random range) wird das Collectable random gespawnt
+    public void SpawnCollectable()
     {
-        //durch random range wird bei spawnen von Item die Item-Position random 
-        Instantiate(item, new Vector3(Random.Range(minRange, maxRange), Random.Range(minRange, maxRange), 0), Quaternion.identity);
+        
+        Instantiate(Collectable, new Vector3(Random.Range(minRange, maxRange), Random.Range(minRange, maxRange), 0), Quaternion.identity);
     }
 }
