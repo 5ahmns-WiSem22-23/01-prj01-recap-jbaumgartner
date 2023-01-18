@@ -1,7 +1,7 @@
 # 01-prj01-recap-jbaumgartner
 
 Development platform:
-OS: Windows 10, Game Engine: Unity 2020.3.18f1, Visual Studio 2019, XR Interaction Toolkit
+OS: Windows 10, Game Engine: Unity 2020.3.18f1, Visual Studio 2019
 
 Project Description:
 An object (player) is controlled by arrow keys (up,down,left,right) or WASD. The object should always be in the middle of the screen.
