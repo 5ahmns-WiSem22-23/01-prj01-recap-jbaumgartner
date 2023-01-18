@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-
         //Vorwärts und Rückwärts Bewegung durch Vertikale Achse
         rb.velocity = transform.rotation * new Vector2(0, Input.GetAxis("Vertical")) * speed;
 
