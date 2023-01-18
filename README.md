@@ -9,7 +9,11 @@ The player can collect and deliver other objects (packages). The player can only
 Only after delivery can another package be collected.
 Packages should always appear in different places and can be collected again.
 
+Graphics:
+![für Readme_2](https://user-images.githubusercontent.com/72390133/213108745-80741377-fdcb-4513-a539-f33f89b3f4d8.PNG)
+![für Readme](https://user-images.githubusercontent.com/72390133/213108773-3bdd47a9-de5b-48e1-9f71-adc0b1c4c3df.PNG)
+
 Project state:
-in progress
+100%
 
 Copyright © 2023 by jbaumgartner
